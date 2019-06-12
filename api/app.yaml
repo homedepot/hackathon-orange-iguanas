@@ -1,4 +1,4 @@
-service: starter-api
+service: orange-iguanas-api
 runtime: custom
 env: flex
 
