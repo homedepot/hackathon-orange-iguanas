@@ -1,0 +1,11 @@
+body {
+    background-color: #72CCD1;
+
+}
+
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Arial Rounded MT Bold'), url('../assets/fonts/ARLRDBD_0.woff') format('woff');
+}
