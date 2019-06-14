@@ -6,16 +6,17 @@ import Landing from '../landing'
 import WishList from '../WishList'
 import WatchAuth from '../auth/WatchAuth'
 import EnterWish from '../enterwish'
+import history from '../history';
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <WatchAuth>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/wish-list" component={WishList} />
-          <Route exact path="/enter-wish" component={EnterWish}/>
+          <Route path="/login" component={Login} />
+          <Route path="/wish-list" component={WishList} />
+          <Route path="/enter-wish" component={EnterWish}/>
         </Switch>
       </WatchAuth>
     </Router>
