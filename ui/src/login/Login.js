@@ -59,7 +59,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{background: '#72CCD1'}}>
         <h1>Welcome to the Make-A-Wish Hackathon starter!!</h1>
         <div className={'login-container'}>
           <div>
