@@ -1,17 +1,25 @@
 import React, { Component  } from "react";
-import './EnterWish.css'
+import './EnterWish.css';
+import axios from 'axios';
+import Image from '../Image';
 
 export default class EnterWish extends Component {
- 
-
   state = {
-    hometown: null,
-    illness: null,
-    myWish: null
+    hometown: undefined,
+    illness: undefined,
+    myWish: undefined
   }
-  handleSubmit = (event) => {
-    alert('...wish submitted: ' + this.state.myWish);
-    event.preventDefault();
+
+  handleSubmit = () => {
+    const {name, age} = this.props
+    const {hometown, illness, wish, wishDetails} = this.state
+    const child = {name, age, hometown,illness, wish, wishDetails }
+   
+    axios.post(`https://xyz.com/wish`, child)
+      .then(res => {
+        console.log('Child wish is updated');
+      })
+
   }
 
   handleHometownChange = (event) => {
@@ -34,7 +42,9 @@ export default class EnterWish extends Component {
     const { name } = this.props;
     return (
       <div className="enter-wish" >  
-        <div className="child-name">Hello, {`${name}`}</div> 
+        <Image className="galaxy-enter-wish" src="logoGalaxy"/>
+        <div className="child-name">Hello, {`${name}`}
+        </div> 
         <form onSubmit={this.handleSubmit}>  
           <label>
             {`${name}'s hometown is..`}
