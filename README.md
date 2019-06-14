@@ -34,7 +34,14 @@ This will host your front end on `localhost:3001`, your api endpoint on `localho
 
 The frontend and backend will auto-refresh as you make changes, and the only time you will ever need to re-run `docker-compose down && docker-compose build && docker-compose up` 
 is if you made changes to the package.json file in either ui or api.
- 
+
+## Swagger UI
+
+This api project is configured with Swagger-ui documentation tool, you can access the swagger-ui by hitting below endpoint 
+
+```
+http://localhost:3002/api-docs/
+```
 
 ## TODOs
 
