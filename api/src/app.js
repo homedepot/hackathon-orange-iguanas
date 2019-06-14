@@ -12,10 +12,10 @@ const index = require('./routes')
 const auth = require('./routes/auth')
 const cors = require('cors')
 
+// Create an Express application
 const app = express()
 
 app.use(compression())
-
 app.use(
   cors({
     origin: (reqOrigin, callback) => {
@@ -30,7 +30,10 @@ app.use(
   })
 )
 
+// Log Requests
 app.use(logger('dev'))
+
+// Parse request
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
@@ -42,6 +45,7 @@ app.use(passport.session())
 
 const Account = require('./db/Account')
 
+// Passport Strategy
 passport.use(new LocalStrategy(Account.authenticate()))
 
 passport.serializeUser(Account.serializeUser())
@@ -49,6 +53,7 @@ passport.deserializeUser(Account.deserializeUser())
 
 require('./db/bootstrap-mongoose')
 
+// Routes
 app.use('/', index)
 app.use('/auth', auth)
 
