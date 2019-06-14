@@ -10,6 +10,15 @@ router.get('/getwishes', function(req, res) {
     })
   })
 
+router.get('/findwish', function(req, res) {
+    Wish.find({ firstName: req.body.firstName }, function(err, wish) {
+        if (err) {
+            console.log("Error: " +err);
+        }
+        res.json(wish)
+    });
+  })
+
 router.post('/createwish', function(req, res) {
     const wish = new Wish({
         firstName: req.body.firstName,
