@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { images } from '../assets/images'
-
 export default class Image extends Component {
   handleClick = event => {
     if (this.props.onClick) {

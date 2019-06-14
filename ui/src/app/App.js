@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
 import Login from '../login'
 import Landing from '../landing'
-import WishList from '../wishList'
+import WishList from '../WishList'
 import WatchAuth from '../auth/WatchAuth'
-import EnterWish from '../enterWish'
+import EnterWish from '../enterwish'
 
 function App() {
   return (

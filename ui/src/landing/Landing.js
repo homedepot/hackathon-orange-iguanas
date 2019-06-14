@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ImageButton from '../image/ImageButton'
+import ImageButton from '../Image/ImageButton'
 
 export default class Landing extends Component {
   state = {
@@ -33,10 +33,12 @@ export default class Landing extends Component {
           </label>
         </form>
         <div className="wish-to">I wish to:</div>
-        <ImageButton src='goSomewhere' txt="GO Somewhere" />
-        <ImageButton src='meetSomeone' txt="MEET Someone"/>
-        <ImageButton src='beSomeone' txt="BE Someone"/>
-        <ImageButton src='seeSomething' txt="SEE Something"/>
+        <div className="image-buttons">
+          <ImageButton src='goSomewhere' txt="GO Somewhere" />
+          <ImageButton src='meetSomeone' txt="MEET Someone"/>
+          <ImageButton src='beSomeone' txt="BE Someone"/>
+          <ImageButton src='seeSomething' txt="SEE Something"/>
+        </div>
       </div>
     )
   }
