@@ -26,7 +26,7 @@ export default class Landing extends Component {
           </label>
         </form>
         <div className="wish-to">I wish to:</div>
-        <ImageButton src='goSomewhere' txt="GO Somewhere"/>
+        <ImageButton src='goSomewhere' txt="GO Somewhere" />
         <ImageButton src='meetSomeone' txt="MEET Someone"/>
         <ImageButton src='beSomeone' txt="BE Someone"/>
         <ImageButton src='seeSomething' txt="SEE Something"/>
