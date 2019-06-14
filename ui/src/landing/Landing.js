@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ImageButton from '../Image/ImageButton'
 import Image from '../Image'
 import './Landing.css'
+import TweenOne from 'rc-tween-one'
 
 export default class Landing extends Component {
   state = {
@@ -26,11 +27,15 @@ export default class Landing extends Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <label>
             My Name is:
-            <input className="text-input" type="text" value={this.state.name} onChange={this.handleNameChange}/>
+            <input className="text-input" type="text" 
+            value={this.state.name} onChange={this.handleNameChange}
+            placeholder="enter your name"/>
           </label>
           <label>
             And my age is
-            <input type="text" className="text-input" value={this.state.age} onChange={this.handleAgeChange}/>
+            <input type="text" className="text-input" 
+            value={this.state.age} onChange={this.handleAgeChange}
+            placeholder="your age" />
             years old!
           </label>
         </form>
