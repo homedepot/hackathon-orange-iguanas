@@ -12,3 +12,22 @@
     line-height: 16px;
     color: #555;
   }
+
+  span {
+    padding: 10px;
+    height: 50px;
+  }
+  
+  .verticalLine {
+    border-left: thick solid #F7F7F7;
+    margin: 10px;
+  }
+  
+  .portrait {
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .icon {
+    width: 5%;
+  }
