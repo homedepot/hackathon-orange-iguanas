@@ -34,7 +34,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!/coverage/",
-      "!<rootDir>/node_modules/"
+      "!<rootDir>/node_modules/",
+      "!src/**/seed.js"
     ],
     "testEnvironment": "node",
     "collectCoverage": true

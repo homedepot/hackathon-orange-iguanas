@@ -45,13 +45,11 @@ router.post('/createwish', function(req, res) {
         wishDetail: req.body.wishDetail
     })
     wish.save().then(result => {
-        console.log("Result: " +result)
-        res.status(200).send({
+        res.status(201).send({
             message: "Your wish was saved successfully."
         })
     })
     .catch(err => {
-        console.log("Error: " +err)
         res.status(500).send({
             message: err.message || "Error occurred while creating wishes."
         })
