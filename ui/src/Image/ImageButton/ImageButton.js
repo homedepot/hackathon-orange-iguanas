@@ -1,5 +1,5 @@
 import Image from '../Image'
-import React, {Component} from './node_modules/react'
+import React, {Component} from 'react'
 
 export default class ImageButton extends Component{
   handleClick = () => {

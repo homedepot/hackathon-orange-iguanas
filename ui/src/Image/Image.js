@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import { images } from 'assets/images'
+
+
+
+import React, { Component } from "../../node_modules/react"
+import { images } from '../assets/images'
 
 export default class Image extends Component {
 
