@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const wishSchema = new Schema({
+const Wish = new Schema({
   firstName: { type: String, required: true },
-  age: { type: String, required: true },
+  age: { type: Number, required: true },
   hometown: { type: String, required: true },
   illness: { type: String, required: true },
   wishType: { type: String, required: true },
@@ -12,12 +12,8 @@ const wishSchema = new Schema({
   date: { type: Date, default: Date.now }
 })
 
-wishSchema.set('toObject', {
-  virtuals: true, // include built-in virtual 'id'
+Wish.set('toObject', {
   versionKey: false, // remove '__v' version key
-  transform: (doc, ret) => {
-    delete ret._id;
-  }
 })
 
-module.exports = mongoose.model('Wish', wishSchema)
+module.exports = mongoose.model('Wish', Wish)
