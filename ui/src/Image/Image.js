@@ -1,13 +1,7 @@
-
-
-
-import React, { Component } from "../../node_modules/react"
+import React, { Component } from 'react'
 import { images } from '../assets/images'
-
 export default class Image extends Component {
-
-
-  handleClick = (event) => {
+  handleClick = event => {
     if (this.props.onClick) {
       this.props.onClick(event)
     }
@@ -20,7 +14,7 @@ export default class Image extends Component {
         className={className}
         style={style}
         alt={this.props.alt}
-        src={images[this.props.source]}
+        src={images[this.props.src]}
         onClick={this.handleClick}
       />
     )
