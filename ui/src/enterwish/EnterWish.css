@@ -1,0 +1,24 @@
+.enter-wish {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  background-color: powderblue;
+  padding: auto;
+  align-items: center;
+  font-weight: 300;
+  font-family: "Comic Sans MS";
+}
+.child-name{
+  margin: 20px;
+}
+input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+label {
+  padding: auto;
+}
+
