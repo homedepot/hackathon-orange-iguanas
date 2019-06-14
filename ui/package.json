@@ -21,7 +21,7 @@
     "extends": "react-app"
   },
   "moduleRoots": [
-    "/ui/src"
+    "src"
   ],
   "jest": {
     "collectCoverageFrom": [

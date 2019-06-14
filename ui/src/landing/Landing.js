@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ImageButton from '../image/imageButton'
+import ImageButton from '../image/ImageButton'
 
 export default class Landing extends Component {
   state = {
@@ -10,6 +10,12 @@ export default class Landing extends Component {
   handleSubmit = () => {
     return true
   }
+  handleNameChange = () => {
+  
+  }
+  handleAgeChange = () => {
+  
+  }
 
   render() {
     return (
@@ -18,11 +24,11 @@ export default class Landing extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             My Name is:
-            <input type="text" value={this.state.name} />
+            <input type="text" value={this.state.name} onChange={this.handleNameChange}/>
           </label>
           <label>
             and my age is
-            <input type="text" value={this.state.age} />
+            <input type="text" value={this.state.age} onChange={this.handleAgeChange}/>
             years old!
           </label>
         </form>
