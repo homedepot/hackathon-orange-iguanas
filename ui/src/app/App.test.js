@@ -14,7 +14,7 @@ describe('Default routing behavior', () => {
       .at(1)
       .props()
 
-    expect(loginRoute.path).toEqual('/')
+    expect(loginRoute.path).toEqual('/login')
     expect(loginRoute.component).toEqual(Login)
 
     let landingRoute = wrapper
@@ -22,7 +22,7 @@ describe('Default routing behavior', () => {
       .at(0)
       .props()
 
-    expect(landingRoute.path).toEqual('/landing')
+    expect(landingRoute.path).toEqual('/')
     expect(landingRoute.component).toEqual(Landing)
   })
 })
