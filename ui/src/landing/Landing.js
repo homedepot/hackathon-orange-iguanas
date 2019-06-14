@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ImageButton from '../image/ImageButton'
+import ImageButton from '../Image/ImageButton'
 
 export default class Landing extends Component {
   state = {
