@@ -1,0 +1,51 @@
+.enter-wish {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  width: 100%;
+  background-color: #72CCD1;
+  padding: auto;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "Comic Sans MS";
+}
+.child-name{
+  margin: 20px;
+  align-items: left;
+}
+
+.galaxy-enter-wish {
+  width: 30%;
+  align-items: right;
+
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: #FDE700;
+  align-items: right;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+textarea {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+label {
+}
+
