@@ -3,5 +3,6 @@ export const images ={
     "goSomewhere": require('./Rocket.png'),
     "meetSomeone": require('./Alien.png'),
     "beSomeone": require('./Astronaut.png'),
-    "seeSomething": require('./Telescope.png')
+    "seeSomething": require('./Telescope.png'),
+    "seeMore": require('./Chevron_Forward.png')
 }
