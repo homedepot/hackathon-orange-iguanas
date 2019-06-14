@@ -39,10 +39,9 @@ export default class WishCard extends Component {
           <p>
             {firstName} wishes to {verb} {wishDetail}
         </p>
+        <p>{date}</p>
+        <p>{sponsor}</p>
         </div>
-
-        <div>{date}</div>
-        <div>{sponsor}</div>
       </Fragment>
     )
   }
