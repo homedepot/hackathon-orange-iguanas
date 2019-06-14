@@ -6,4 +6,3 @@ export const WISH_TYPE_GO = "GO";
 export const WISH_TYPE_MEET = "MEET";
 export const WISH_TYPE_BE = "BE";
 export const WISH_TYPE_SEE = "SEE";
-
