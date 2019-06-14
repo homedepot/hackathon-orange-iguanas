@@ -12,6 +12,9 @@ const index = require('./routes')
 const auth = require('./routes/auth')
 const wishcontroller = require('./routes/wishcontroller')
 const cors = require('cors')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../config/swagger.json')
+const router = require('express').Router()
 
 // Create an Express application
 const app = express()
@@ -58,6 +61,12 @@ require('./db/bootstrap-mongoose')
 app.use('/', index)
 app.use('/auth', auth)
 app.use('/wish', wishcontroller)
+
+
+// Swagger setup
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use('/', router)
+//
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

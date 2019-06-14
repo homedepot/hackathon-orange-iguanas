@@ -1,0 +1,187 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Make-A-WishApplication API",
+      "description": "Make-A-WishApplication API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3002",
+    "basePath": "/wish",
+    "tags": [
+      {
+        "name": "Make-A-Wish",
+        "description": "API for Make-A-Wish in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/getwishes": {
+        "get": {
+          "tags": [
+            "Get All Wishes"
+          ],
+          "summary": "Get all wishes from system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Wishes"
+              }
+            }
+          }
+        }
+      },
+      "/createwish": {
+        "parameters": [
+          {
+            "firstName": "name",
+            "age": "age",
+            "hometown": "hometown",
+            "illness": "illness",
+            "wishType": "wishType",
+            "wishDetail": "wishDetail"
+          }
+        ],
+
+      "post": {
+        "tags": [
+          "Create Wish"
+        ],
+        "description": "Create new wish in system",
+        "parameters": [
+          {
+            "name": "wish",
+            "in": "body",
+            "description": "wish that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Wish"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New wish is created",
+            "schema": {
+              "$ref": "#/definitions/Wish"
+            }
+          }
+        }
+       }
+      },
+      "/findbyid/:id": {
+        "get": {
+          "tags": [
+            "Find Wish by Id"
+          ],
+          "summary": "Find wish by Id from system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Wish"
+              }
+            }
+          }
+        }
+      },
+      "/findwish/:value": {
+        "get": {
+          "tags": [
+            "Search Wishes by value"
+          ],
+          "summary": "Search Wishes by value from system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Wishes"
+              }
+            }
+          }
+        }
+      },
+      "/deletewish/:id": {
+        "delete": {
+          "tags": [
+            "Delete Wish by Id"
+          ],
+          "summary": "Delete wish by Id from system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Wish"
+              }
+            }
+          }
+        }
+      },
+      "/findwish/:dateFrom/to/:dateTo": {
+        "get": {
+          "tags": [
+            "Get Wishes in given range date value"
+          ],
+          "summary": "Get Wishes in given range date value",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Wishes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Wish": {
+        "required": [
+          "firstName",
+          "age",
+          "hometown",
+          "illness",
+          "wishType",
+          "wishDetail"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "hometown": {
+            "type": "string"
+          },
+          "illness": {
+            "type": "string"
+          },
+          "wishType": {
+            "type": "string"
+          },
+          "wishDetail": {
+            "type": "string"
+          }
+        }
+      },
+      "Wishes": {
+        "type": "array",
+        "$ref": "#/definitions/Wish"
+      }
+    }
+  }
