@@ -4,6 +4,6 @@ export default class WishList extends Component {
   
   
   render(){
-    
+    return <div>Wish List</div>
   }
 }

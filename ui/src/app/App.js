@@ -5,6 +5,7 @@ import Login from '../login/Login'
 import Landing from '../landing/Landing'
 import WishList from '../wishList/WishList'
 import WatchAuth from '../auth/WatchAuth'
+import EnterWish from '../enterWish/EnterWish'
 
 function App() {
   return (

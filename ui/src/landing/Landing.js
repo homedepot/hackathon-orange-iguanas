@@ -1,27 +1,28 @@
 import React, { Component } from 'react'
+import ImageButton from '../image/imageButton'
 
 export default class Landing extends Component {
-  state = { 
-    name: "",
+  state = {
+    name: '',
     age: 1
-  };
+  }
 
-  handleSubmit () => {
+  handleSubmit = () => {
     return true
   }
 
   render() {
     return (
-      <div className="landing"> 
+      <div className="landing">
         <div className="landing-title">Hello</div>
         <form onSubmit={this.handleSubmit}>
           <label>
             My Name is:
-            <input type="text" value={this.state.name}/>
+            <input type="text" value={this.state.name} />
           </label>
           <label>
             and my age is
-            <input type="text" value={this.state.age}/>
+            <input type="text" value={this.state.age} />
             years old!
           </label>
         </form>
@@ -31,7 +32,6 @@ export default class Landing extends Component {
         <ImageButton src='beSomeone' txt="BE Someone"/>
         <ImageButton src='seeSomething' txt="SEE Something"/>
       </div>
-     
-
     )
+  }
 }
