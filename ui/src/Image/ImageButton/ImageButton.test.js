@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import ImageButton from './ImageButton'
+import {ImageButton} from './ImageButton'
 
 it('returns true', () => {
   const div = document.createElement('div')
