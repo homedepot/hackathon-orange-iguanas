@@ -15,27 +15,28 @@ export default class WishCard extends Component {
       sponsor
     } = this.props.data
     let verb
-    let imgclass
+    let imgprofile
+    let imgclass = 'icon'
     let imgsrc
     switch (wishType) {
       case constants.WISH_TYPE_GO:
         verb = ' go to ';
-        imgclass = 'icon';
+        imgprofile = 'monthMagenta';
         imgsrc = 'goSomewhere';
         break;
         case constants.WISH_TYPE_MEET:
         verb = ' meet ';
-        imgclass = 'icon';
+        imgprofile = 'monthBlue';
         imgsrc = 'meetSomeone';
         break;
         case constants.WISH_TYPE_SEE:
         verb = ' see ';
-        imgclass = 'icon';
+        imgprofile = 'monthMagenta';
         imgsrc = 'seeSomething';
         break;
         case constants.WISH_TYPE_BE:
         verb = ' be ';
-        imgclass = 'icon';
+        imgprofile = 'monthBlue';
         imgsrc = 'beSomeone';
         break;
       default:
@@ -45,7 +46,7 @@ export default class WishCard extends Component {
       <Fragment>
         <div className="card">
         <p>
-        <Image className={imgclass} src={imgsrc}/>
+        <Image className={imgclass} src={imgprofile}/>
         <Image className={imgclass} src={imgsrc}/>
             <span class="verticalLine">
             <b>{firstName}</b> - Age {age} from {hometown}, GA
@@ -57,10 +58,9 @@ export default class WishCard extends Component {
         <Image className={imgclass} src={imgsrc}/>
         <Image src="seeMore"/>
         </p>
+        <p>{date}</p>
+        <p>{sponsor}</p>
         </div>
-
-        <div>{date}</div>
-        <div>{sponsor}</div>
       </Fragment>
     )
   }
