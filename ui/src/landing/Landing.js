@@ -2,36 +2,33 @@ import React, { Component } from 'react'
 import ImageButton from '../Image/ImageButton'
 import Image from '../Image'
 import './Landing.css'
-import Spin from 'react-reveal/Spin'
 import LightSpeed from 'react-reveal/LightSpeed'
-
-export default class Landing extends Component {
-  state = {
-    name: '',
-    age: undefined,
-    animation: {
-      d: 'M60,10L60,90L140,90L140,10Z',
-      yoyo: true,
-      repeat: -1,
-      duration: 1000
-    }
+import {withStore} from '../store'
+export class Landing extends Component {
+  componentDidMount() {
+    const { store } = this.props
+    store.set({ name: '', age: undefined })
   }
 
   handleSubmit = () => {
     return true
   }
-  handleNameChange = () => {}
-  handleAgeChange = () => {}
+  handleNameChange = event => {
+    const { store } = this.props    
+    store.set({ name: event.target.value })
+  }
+  handleAgeChange = event => {
+    const { store } = this.props
+    store.set({ age: event.target.value })
+  }
 
   render() {
     return (
       <div className="landing">
         <div className="landing-title">
-          Hello!!!{' '}
+          Hello!!!
           <LightSpeed forever={true}>
-
-              <Image className="galaxy-image" src="logoGalaxy" />
-
+            <Image className="galaxy-image" src="logoGalaxy" />
           </LightSpeed>
         </div>
         <form className="form" onSubmit={this.handleSubmit}>
@@ -40,7 +37,7 @@ export default class Landing extends Component {
             <input
               className="text-input"
               type="text"
-              value={this.state.name}
+              // value={this.state.name}
               onChange={this.handleNameChange}
               placeholder="enter your name"
             />
@@ -50,7 +47,7 @@ export default class Landing extends Component {
             <input
               type="text"
               className="text-input"
-              value={this.state.age}
+              // value={this.state.age}
               onChange={this.handleAgeChange}
               placeholder="your age"
             />
@@ -88,3 +85,4 @@ export default class Landing extends Component {
     )
   }
 }
+export default withStore(Landing)

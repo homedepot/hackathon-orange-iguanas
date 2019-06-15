@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from './App'
+import {App} from './App'
 import { Route } from 'react-router-dom'
 import Landing from '../landing/Landing'
 import Login from '../login/Login'
