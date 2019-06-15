@@ -9,7 +9,7 @@ export const images ={
     "monthMagenta": require('./Month_Magenta.png'),
     "monthBlue": require('./Month_Blue.png'),
     "thd": require('./thd.png'),
-    "needSponsor": require('./MakeWish.png')
+    "needSponsor": require('./MakeWish.png'),
 
     "logoMakeWish": require('./logo_make_wish.png')
 
