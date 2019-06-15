@@ -6,9 +6,11 @@ import Landing from '../landing'
 import WishList from '../WishList'
 import WatchAuth from '../auth/WatchAuth'
 import EnterWish from '../enterwish'
-import history from '../history';
+import history from '../history'
+import {createStore} from '../store'
 
-function App() {
+
+export const App = () => {
   return (
     <Router history={history}>
       <WatchAuth>
@@ -23,4 +25,4 @@ function App() {
   )
 }
 
-export default App
+export default createStore(App)

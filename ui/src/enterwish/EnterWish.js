@@ -2,8 +2,9 @@ import React, { Component  } from "react";
 import './EnterWish.css';
 import axios from 'axios';
 import Image from '../Image';
-
-export default class EnterWish extends Component {
+import Pulse from 'react-reveal/Pulse'
+import {withStore} from '../store'
+export class EnterWish extends Component {
   state = {
     hometown: undefined,
     illness: undefined,
@@ -11,7 +12,7 @@ export default class EnterWish extends Component {
   }
 
   handleSubmit = () => {
-    const {name, age} = this.props
+    const {name, age} = this.props.store.get(['name', 'age'])
     const {hometown, illness, wish, wishDetails} = this.state
     const child = {name, age, hometown,illness, wish, wishDetails }
    
@@ -39,13 +40,11 @@ export default class EnterWish extends Component {
   }
 
   render(){
-    const { name } = this.props;
+    const name="kid"
+    
     return (
-      <div className="enter-wish" >  
-        <Image className="galaxy-enter-wish" src="logoGalaxy"/>
-        <div className="child-name">Hello, {`${name}`}
-        </div> 
-        <form onSubmit={this.handleSubmit}>  
+        <div className="my-wish">  
+        <form className="enter-wish"  onSubmit={this.handleSubmit}>  
           <label>
             {`${name}'s hometown is..`}
             <input type="text" value={this.state.hometown} onChange={this.handleHometownChange}/>
@@ -70,7 +69,10 @@ export default class EnterWish extends Component {
           <input type="submit" value="Submit" />
           </div>
         </form>
+
+        <Pulse forever={true}><Image className="galaxy-enter-wish" src="logoGalaxy"/></Pulse>
       </div>
     )
   }
 }
+export default withStore(EnterWish)
