@@ -15,7 +15,7 @@ export default class WishCard extends Component {
       sponsor
     } = this.props.data
     let verb
-    let imgprofile
+    let imgdate
     let imgsponsor
     let sponsortext
     let imgclass = 'icon'
@@ -24,7 +24,7 @@ export default class WishCard extends Component {
     switch (wishType) {
       case constants.WISH_TYPE_GO:
         verb = ' go to ';
-        imgprofile = 'monthMagenta';
+        imgdate = 'monthMagenta';
         imgsponsor = 'thd';
         sponsortext = "The Home Depot";
         imgsrc = 'goSomewhere';
@@ -32,7 +32,7 @@ export default class WishCard extends Component {
         break;
         case constants.WISH_TYPE_MEET:
         verb = ' meet ';
-        imgprofile = 'monthBlue';
+        imgdate = 'monthBlue';
         imgsponsor = 'thd';
         sponsortext = "The Home Depot";
         imgsrc = 'meetSomeone';
@@ -40,7 +40,7 @@ export default class WishCard extends Component {
         break;
         case constants.WISH_TYPE_SEE:
         verb = ' see ';
-        imgprofile = 'monthMagenta';
+        imgdate = 'monthMagenta';
         imgsponsor = 'needSponsor';
         sponsortext = "Need Sponsor";
         imgsrc = 'seeSomething';
@@ -48,7 +48,7 @@ export default class WishCard extends Component {
         break;
         case constants.WISH_TYPE_BE:
         verb = ' be ';
-        imgprofile = 'monthBlue';
+        imgdate = 'monthBlue';
         imgsponsor = 'needSponsor';
         sponsortext = "Need Sponsor";
         imgsrc = 'beSomeone';
@@ -61,7 +61,8 @@ export default class WishCard extends Component {
       <Fragment>
         <div className="card">
           <p>
-          <Image className={imgclass} src={imgprofile}/>
+          <span class='date-text'>8</span>
+          <Image className='{imgclass} container' src={imgdate}/>
           <Image className={imgclass} src={imgsrc}/>
           
           <span>
