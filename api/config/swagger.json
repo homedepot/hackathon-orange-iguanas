@@ -2,12 +2,8 @@
     "swagger": "2.0",
     "info": {
       "version": "1.0.0",
-      "title": "Make-A-WishApplication API",
-      "description": "Make-A-WishApplication API",
-      "license": {
-        "name": "MIT",
-        "url": "https://opensource.org/licenses/MIT"
-      }
+      "title": "Make-A-Wish Application API",
+      "description": "Make-A-Wish Application API"
     },
     "host": "localhost:3002",
     "basePath": "/wish",
@@ -18,7 +14,7 @@
       }
     ],
     "schemes": [
-      "http"
+      "http", "https"
     ],
     "consumes": [
       "application/json"
@@ -44,20 +40,9 @@
         }
       },
       "/createwish": {
-        "parameters": [
-          {
-            "firstName": "name",
-            "age": "age",
-            "hometown": "hometown",
-            "illness": "illness",
-            "wishType": "wishType",
-            "wishDetail": "wishDetail"
-          }
-        ],
-
-      "post": {
-        "tags": [
-          "Create Wish"
+        "post": {
+            "tags": [
+                "Create Wish"
         ],
         "description": "Create new wish in system",
         "parameters": [
@@ -83,10 +68,19 @@
         }
        }
       },
-      "/findbyid/:id": {
+      "/findbyid/{id}": {
         "get": {
           "tags": [
             "Find Wish by Id"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "Provide Id to find",
+              "type": "string"
+            }
           ],
           "summary": "Find wish by Id from system",
           "responses": {
@@ -99,10 +93,19 @@
           }
         }
       },
-      "/findwish/:value": {
+      "/findwish/{value}": {
         "get": {
           "tags": [
-            "Search Wishes by value"
+            "Search Wishes by firstName or hometown or created date"
+          ],
+          "parameters": [
+            {
+              "name": "value",
+              "in": "path",
+              "required": true,
+              "description": "Provide firstName or hometown or created date",
+              "type": "string"
+            }
           ],
           "summary": "Search Wishes by value from system",
           "responses": {
@@ -115,10 +118,19 @@
           }
         }
       },
-      "/deletewish/:id": {
+      "/deletewish/{id}": {
         "delete": {
           "tags": [
             "Delete Wish by Id"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "Provide Id to Delete",
+              "type": "string"
+            }
           ],
           "summary": "Delete wish by Id from system",
           "responses": {
@@ -131,10 +143,26 @@
           }
         }
       },
-      "/findwish/:dateFrom/to/:dateTo": {
+      "/findwish/{dateFrom}/to/{dateTo}": {
         "get": {
           "tags": [
             "Get Wishes in given range date value"
+          ],
+          "parameters": [
+            {
+              "name": "dateFrom",
+              "in": "path",
+              "required": true,
+              "description": "Provide from date",
+              "type": "string"
+            },
+            {
+                "name": "dateTo",
+                "in": "path",
+                "required": true,
+                "description": "Provide to date",
+                "type": "string"
+              }
           ],
           "summary": "Get Wishes in given range date value",
           "responses": {

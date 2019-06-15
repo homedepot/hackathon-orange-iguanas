@@ -14,7 +14,6 @@ const wishcontroller = require('./routes/wishcontroller')
 const cors = require('cors')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('../config/swagger.json')
-const router = require('express').Router()
 
 // Create an Express application
 const app = express()
@@ -65,7 +64,6 @@ app.use('/wish', wishcontroller)
 
 // Swagger setup
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-app.use('/', router)
 //
 
 // catch 404 and forward to error handler
