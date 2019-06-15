@@ -11,8 +11,6 @@ export default class WishCard extends Component {
       hometown,
       wishType,
       wishDetail,
-      date,
-      sponsor
     } = this.props.data
     let verb
     let imgdate
