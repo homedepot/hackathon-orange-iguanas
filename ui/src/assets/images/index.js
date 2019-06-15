@@ -6,5 +6,7 @@ export const images ={
     "seeSomething": require('./Telescope.png'),
     "seeMore": require('./Chevron_Forward.png'),
     "monthMagenta": require('./Month_Magenta.png'),
-    "monthBlue": require('./Month_Blue.png')
+    "monthBlue": require('./Month_Blue.png'),
+    "thd": require('./thd.png'),
+    "needSponsor": require('./MakeWish.png')
 }
