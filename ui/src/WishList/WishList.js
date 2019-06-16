@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import WishCard from './WishCard'
 import axios from 'axios'
+import {isEmpty} from 'lodash'
 
 // TODO: This is temporary, need to hook up to real data call
 // const wishes = [
@@ -69,7 +70,7 @@ export default class WishList extends Component {
 
   render() {
     const { wishes } = this.state
-    return wishes ? (
+    return !isEmpty(wishes) ? (
       <div>
         <div>Wish List</div>
         {wishes.map((wish, index) => (

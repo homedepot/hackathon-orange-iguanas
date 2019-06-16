@@ -15,10 +15,13 @@ export class EnterWish extends Component {
     const {name, age} = this.props.store.get(['name', 'age'])
     const {hometown, illness, wish, wishDetails} = this.state
     const child = {name, age, hometown,illness, wish, wishDetails }
-   
+    
     axios.post(`https://xyz.com/wish`, child)
-      .then(res => {
+      .then(response => {
         console.log('Child wish is updated');
+        console.log(response);
+      }).catch(error => {
+        console.warn(error)
       })
 
   }

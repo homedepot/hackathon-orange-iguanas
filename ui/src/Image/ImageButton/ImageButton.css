@@ -6,6 +6,7 @@
   transition: 0.3s;
   padding: 5px;
   margin: 45px;
+  cursor:pointer;
 }
 .image-button-text1, .image-button-text2{
   text-align: center;
