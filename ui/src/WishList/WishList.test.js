@@ -1,9 +1,37 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import { shallow } from 'enzyme'
 import WishList from './WishList'
+import axios from 'axios'
 
+jest.mock('axios', () => ({
+  get: jest.fn(() =>
+    Promise.resolve({
+      data: [
+        {
+          firstName: 'Sally',
+          age: '12',
+          hometown: 'Marietta',
+          illness: 'Critical Illness 1',
+          wishType: 'GO',
+          wishDetail: 'disney world'
+        }
+      ]
+    })
+  )
+}))
+
+let component
+let props
+const renderComponent = () => {
+  component = shallow(<WishList />)
+}
+beforeEach(() => {
+  renderComponent()
+})
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDom.render(<WishList />, div)
-  ReactDom.unmountComponentAtNode(div)
+  expect(component).toBeTruthy()
+})
+
+it('mounts wishcard', () => {
+  expect(component.find('WishCard').length).toEqual(1)
 })

@@ -10,9 +10,6 @@ export class Landing extends Component {
     store.set({ name: '', age: undefined })
   }
 
-  handleSubmit = () => {
-    return true
-  }
   handleNameChange = event => {
     const { store } = this.props    
     store.set({ name: event.target.value })
@@ -31,30 +28,28 @@ export class Landing extends Component {
             <Image className="galaxy-image" src="logoGalaxy" />
           </LightSpeed>
         </div>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <div className="input-group">
           <label>
-            My Name is:
+            My Name is
             <input
               className="text-input"
               type="text"
-              // value={this.state.name}
               onChange={this.handleNameChange}
               placeholder="enter your name"
             />
           </label>
           <label>
-            And my age is
+            And I am
             <input
               type="text"
               className="text-input"
-              // value={this.state.age}
               onChange={this.handleAgeChange}
               placeholder="your age"
             />
             years old!
           </label>
-        </form>
-        <div className="wish-to">I wish to:</div>
+        </div>
+        <div className="wish-to">I wish to</div>
         <div className="image-buttons">
           <ImageButton
             src="goSomewhere"
