@@ -12,3 +12,47 @@
     line-height: 16px;
     color: #555;
   }
+
+  @font-face {
+    font-family: 'Arial Rounded MT Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Arial Rounded MT Bold'), url('../assets/fonts/ARLRDBD_0.woff') format('woff');
+  }
+
+  span {
+    padding: 10px;
+    height: 50px;
+  }
+  
+  .verticalLine {
+    padding: 10px;
+    border-left: thick solid #F7F7F7;
+    height: 50px;
+    margin: 10px;
+  }
+  
+  .portrait {
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .icon {
+    width: 5%;
+  }
+
+  .container { 
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .date-text { 
+    position: absolute;
+    top: 65%;
+    left: 3.15%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: black;
+    font-size: 60px;
+  }
